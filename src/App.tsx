@@ -1,15 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
-import { useState } from 'react'
+import Dashboard from './dashboard';
+import Cliente from './cliente';
 
 const App: React.FC = () => {
-  const [count, setCount] = useState<number>(0)
-  return(
-    <div className='App'>
+
+  const [tela, setTela] = useState<JSX.Element>(<Dashboard />)
+  
+  return (
+    <div>
+      {tela}
       <button onClick={() => {
-        setCount(count => count + 1)
-      }}>click</button>
-      <p>{count}</p>
+        setTela(<Dashboard />)
+      }}>dashboard</button>
+      <button onClick={() => {
+        setTela(<Cliente />)
+      }}>cliente</button>
     </div>
   )
 }
