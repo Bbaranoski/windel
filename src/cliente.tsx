@@ -2,19 +2,24 @@ import React from 'react';
 import { useState } from 'react';
 
 const Cliente: React.FC = () => {
-
-    const [cadastro, setCadastro] = useState(<Consulta />)
-    return cadastro
+    const [tela, setTela] = useState<JSX.Element>(<Consulta />)
+    return <Consulta setTela={setTela} />
 }
 
-const Consulta: React.FC = () => {
+interface Props {
+    setTela: React.Dispatch<React.SetStateAction<JSX.Element>>;
+}
+
+const Consulta: React.FC<Props> = ({ setTela }) => {
     return(
         <div>
             <div>
 
             </div>
             <div>
-                <button>TESTE</button>
+                <button onClick={() => {
+                    setTela(<Cadastro />)
+                }}>TESTE</button>
             </div>
         </div>
     )
