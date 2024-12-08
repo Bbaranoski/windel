@@ -9,14 +9,19 @@ const App: React.FC = () => {
   const [tela, setTela] = useState<JSX.Element>(<Dashboard />)
   
   return (
-    <div>
+    <div className='app'>
+      <div className='header'>
+        <h1>WINDEL</h1> 
+      </div>
+      <div className='side'>
+        <button onClick={() => {
+          setTela(<Dashboard />)
+        }}>dashboard</button>
+        <button onClick={() => {
+          setTela(<Cliente />)
+        }}>cliente</button>
+      </div>
       {tela}
-      <button onClick={() => {
-        setTela(<Dashboard />)
-      }}>dashboard</button>
-      <button onClick={() => {
-        setTela(<Cliente />)
-      }}>cliente</button>
     </div>
   )
 }
