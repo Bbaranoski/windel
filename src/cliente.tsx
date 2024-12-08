@@ -1,7 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const cliente: object[] = []
+type teste = {
+    nome: string
+}
+
+const cliente: teste[] = []
+
+interface Props {
+    setTela: React.Dispatch<React.SetStateAction<JSX.Element>>;
+}
 
 const Cliente: React.FC = () => {
     const [tela, setTela] = useState<JSX.Element>(<></>)
@@ -11,15 +19,14 @@ const Cliente: React.FC = () => {
     return <>{tela}</>
 }
 
-interface Props {
-    setTela: React.Dispatch<React.SetStateAction<JSX.Element>>;
-}
-
 const Consulta: React.FC<Props> = ({ setTela }) => {
+    console.log(cliente)
     return(
         <div>
             <div>
-
+                {cliente.map((item, index) => (
+                    <p key={index}>{item.nome}</p>
+                ))}
             </div>
             <div>
                 <button onClick={() => {
@@ -31,20 +38,21 @@ const Consulta: React.FC<Props> = ({ setTela }) => {
 }
 
 const Cadastro: React.FC<Props> = ({ setTela }) => {
-    const [pessoa, setPessoa] = useState<object>({
-        name: ""
-    })
+    const [pessoa, setPessoa] = useState<teste>({nome: ""})
     return(
         <div>
             <form action="get">
                 <label htmlFor="name">Nome:</label>
-                <input type="text" required
-                name='name' id='name' onChange={(e) => {
-                    setPessoa({name: e.target.value})
+                <input type="text"
+                required
+                name='name' 
+                id='name' 
+                onChange={(e) => {
+                    setPessoa({nome: e.target.value})
                 }}/>
-                <button onClick={() => {
-                    cliente.push({pessoa})
-                    console.log(cliente)
+                <button type="button" 
+                onClick={() => {
+                    cliente.push(pessoa)
                     setTela(<Consulta setTela={setTela} />)
                 }}>Cadastrar</button>
             </form>
