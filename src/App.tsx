@@ -10,6 +10,8 @@ import { FaRegStar } from "react-icons/fa";
 import { IoSunnyOutline } from "react-icons/io5";
 import { TbBorderCorners } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
+import logo from "./image/logo.webp"
+
 const App: React.FC = () => {
 
   const [tela, setTela] = useState<JSX.Element>(<Inicio />)
@@ -28,7 +30,7 @@ const App: React.FC = () => {
       </div>
       <div className='side'>
         <div>
-          <img src='' alt="windel icone" />
+        <img src={logo} alt="windel logo" />
           <h1>WINDEL</h1>
         </div>
         <button onClick={() => {
