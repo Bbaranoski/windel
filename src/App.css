@@ -4,8 +4,13 @@ h1{
 .header{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   grid-column: 2/3;
+}
+
+.header > div{
+  display: flex;
+  gap: 10px;
 }
 
 .side{
@@ -18,15 +23,23 @@ h1{
 
 .side > button{
   border: 0px;
-  box-shadow: 0px;
   padding: 1.5vh;
+  min-height: 40px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.side > div{
+  display: flex;
 }
 
 .app{
   height: 100vh;
   display: grid;
-  grid-template: 7vh 1fr/ 1fr 5fr;
+  grid-template: minmax(50px, 7vh) 1fr/ 1fr 5fr;
   gap: 2px;
 }
 
