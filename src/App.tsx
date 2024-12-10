@@ -15,6 +15,9 @@ import logo from "./image/logo.webp"
 const App: React.FC = () => {
 
   const [tela, setTela] = useState<JSX.Element>(<Inicio />)
+  function select(){
+    
+  }
   
   return (
     <div className='app'>
@@ -35,6 +38,7 @@ const App: React.FC = () => {
         </div>
         <button onClick={() => {
           setTela(<Inicio />)
+          select()
         }}><HiOutlineHome size={20} color='black'/>Home</button>
         <button onClick={() => {
           setTela(<Cliente />)

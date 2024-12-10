@@ -23,16 +23,21 @@ h1{
 }
 
 .side > button{
+  background-color: white;
   border: 0px;
   padding: 1.5vh;
   min-height: 40px;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 10px;
+  transition: 0.5s;
 }
 
+.side > button:hover, .icon > *:hover{
+  border-radius: 10px;
+  background-color: rgb(241, 240, 240);
+}
 .side > div{
   display: flex;
 }
