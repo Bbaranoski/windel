@@ -38,6 +38,12 @@ h1{
   border-radius: 10px;
   background-color: rgb(241, 240, 240);
 }
+
+#select{
+  background-color: #9FC5E8;
+  border-radius: 10px;
+}
+
 .side > div{
   display: flex;
 }

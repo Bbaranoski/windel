@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
 import Inicio from './inicio';
@@ -15,8 +15,9 @@ import logo from "./image/logo.webp"
 const App: React.FC = () => {
 
   const [tela, setTela] = useState<JSX.Element>(<Inicio />)
-  function select(){
-    
+  const [selectIndex, setSelectIndex] = useState<number | null>(0)
+  const select = (index: number) => {
+    setSelectIndex(index)
   }
   
   return (
@@ -36,12 +37,17 @@ const App: React.FC = () => {
         <img src={logo} alt="windel logo" />
           <h1>WINDEL</h1>
         </div>
-        <button onClick={() => {
-          setTela(<Inicio />)
-          select()
+        <button
+          id={selectIndex === 0 ? 'select' : ''}
+          onClick={() => {
+            select(0)
+            setTela(<Inicio />)
         }}><HiOutlineHome size={20} color='black'/>Home</button>
-        <button onClick={() => {
-          setTela(<Cliente />)
+        <button 
+          id={selectIndex === 1 ? 'select' : ''}
+          onClick={() => {
+            select(1)
+            setTela(<Cliente />)
         }}>< GoPerson size={20} color='black'/>Cliente</button>
       </div>
       {tela}
