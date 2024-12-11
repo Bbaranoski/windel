@@ -12,6 +12,7 @@ h1{
 .header > div{
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .side{
@@ -34,7 +35,7 @@ h1{
   transition: 0.5s;
 }
 
-.side > button:hover, .icon > *:hover{
+.side > button:hover, .icon > *:hover, .recolhe:hover{
   border-radius: 10px;
   background-color: rgb(241, 240, 240);
 }
@@ -60,5 +61,5 @@ h1{
 }
 
 img{
-  height: 5vh;
+  height: clamp(30px, 5vh, 5vh);
 }

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
-import './cliente.css'
 import Inicio from './inicio';
 import Cliente from './cliente';
 import { HiOutlineHome } from "react-icons/hi";
@@ -11,11 +10,13 @@ import { FaRegStar } from "react-icons/fa";
 import { IoSunnyOutline } from "react-icons/io5";
 import { TbBorderCorners } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
+import { IoIosArrowBack } from "react-icons/io";
 import logo from "./image/logo.webp"
 
 const App: React.FC = () => {
-
+  //função useState que troca a tela renderizada
   const [tela, setTela] = useState<JSX.Element>(<Inicio />)
+  //função para colocar a classe select nos botões
   const [selectIndex, setSelectIndex] = useState<number | null>(0)
   const select = (index: number) => {
     setSelectIndex(index)
@@ -23,8 +24,12 @@ const App: React.FC = () => {
   
   return (
     <div className='app'>
+
       <div className='header'>
-        <h1>aaaaaaaaaa</h1>
+        <div>
+          <IoIosArrowBack size={20} color='black' className='recolhe'/>
+          <h1>aaaaaaaaaa</h1>
+        </div>
         <div className='icon'>
           <IoSunnyOutline size={20} color='black'/>
           <FaRegStar size={20} color='black'/>
@@ -33,6 +38,7 @@ const App: React.FC = () => {
           <TbBorderCorners size={20} color='black'/>
         </div>
       </div>
+
       <div className='side'>
         <div>
         <img src={logo} alt="windel logo" />
@@ -51,7 +57,10 @@ const App: React.FC = () => {
             setTela(<Cliente />)
         }}>< GoPerson size={20} color='black'/>Cliente</button>
       </div>
+      
+      {/*conteudo principal da pagina, variavel do useState*/}
       {tela}
+
     </div>
   )
 }
