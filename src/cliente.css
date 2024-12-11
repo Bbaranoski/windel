@@ -7,6 +7,7 @@
 
 .cadastro > div:first-child > button{
     font-size: 20px;
+    color: white;
     background-color: #8BC34A;
     border: 2px solid rgb(240, 240, 240);
     border-radius: 20px;

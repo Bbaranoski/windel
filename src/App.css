@@ -2,11 +2,24 @@ h1{
   margin: 0px;
 }
 
+.app{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(50px, 7vh) 1fr;
+  grid-template-columns: minmax(50px, 7vh) 1fr 5fr;
+  gap: 2px;
+}
+
+.app > div{
+  background-color: white;
+  transition: 1s;
+}
+
 .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-column: 2/3;
+  grid-column: 3/4;
 }
 
 .header > div{
@@ -20,6 +33,7 @@ h1{
   flex-direction: column;
   gap: 5px;
   grid-row: 1/3;
+  grid-column: span 2;
   padding: 10px;
 }
 
@@ -49,17 +63,23 @@ h1{
   display: flex;
 }
 
-.app{
-  height: 100vh;
-  display: grid;
-  grid-template: minmax(50px, 7vh) 1fr/ 1fr 5fr;
-  gap: 2px;
-}
-
-.app > div{
-  background-color: white;
-}
-
 img{
   height: clamp(30px, 5vh, 5vh);
+}
+
+#recolheSide{
+  grid-column: span 1;
+  padding: 0;
+}
+
+#recolheSide h1{
+  display: none;
+}
+
+#recolheSide button{
+  font-size: 0;
+}
+
+#recolheHeader, #recolheMain{
+  grid-column: span 2;
 }

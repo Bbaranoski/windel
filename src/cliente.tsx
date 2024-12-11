@@ -38,7 +38,7 @@ const Consulta: React.FC<Props> = ({ setTela }) => {
 }
 //paga o valor dos inputs e coloca dentro da array cliente
 const Cadastro: React.FC<Props> = ({ setTela }) => {
-    const [pessoa, setPessoa] = useState<teste>({nome: ""})
+    const [pessoa, setPessoa] = useState<teste | null>(null)
     return(
         <div>
             <form action="get">
@@ -53,8 +53,10 @@ const Cadastro: React.FC<Props> = ({ setTela }) => {
                 <button type="submit" 
                 onClick={(e) => {
                     e.preventDefault()
-                    cliente.push(pessoa)
-                    setTela(<Consulta setTela={setTela} />)
+                    if(pessoa != null){
+                        cliente.push(pessoa)
+                        setTela(<Consulta setTela={setTela}/>)
+                    }
                 }}>Cadastrar</button>
             </form>
         </div>

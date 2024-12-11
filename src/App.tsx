@@ -21,13 +21,19 @@ const App: React.FC = () => {
   const select = (index: number) => {
     setSelectIndex(index)
   }
+  //função para definir o tamanho da sidebar com id
+  const [recolhe, setRecolhe] = useState<boolean>(false)
   
   return (
     <div className='app'>
 
-      <div className='header'>
+      <div className='header' id={recolhe === false ? '' : 'recolheHeader'}>
         <div>
-          <IoIosArrowBack size={20} color='black' className='recolhe'/>
+          <IoIosArrowBack size={20} color='black' className='recolhe'
+          onClick={() => {
+            setRecolhe(!recolhe)
+          }}
+          />
           <h1>aaaaaaaaaa</h1>
         </div>
         <div className='icon'>
@@ -39,7 +45,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div className='side'>
+      <div className='side' id={recolhe === false ? '' : 'recolheSide'}>
         <div>
         <img src={logo} alt="windel logo" />
           <h1>WINDEL</h1>
@@ -59,7 +65,9 @@ const App: React.FC = () => {
       </div>
       
       {/*conteudo principal da pagina, variavel do useState*/}
-      {tela}
+      <div id={recolhe === false ? '' : 'recolheMain'}>
+       {tela}
+      </div>
 
     </div>
   )
