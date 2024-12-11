@@ -23,16 +23,16 @@ const Cliente: React.FC = () => {
 const Consulta: React.FC<Props> = ({ setTela }) => {
     console.log(cliente)
     return(
-        <div>
-            <div>
-                {cliente.map((item, index) => (
-                    <p key={index}>{item.nome}</p>
-                ))}
-            </div>
+        <div className='cadastro'>
             <div>
                 <button onClick={() => {
                     setTela(<Cadastro setTela={setTela} />)
-                }}>TESTE</button>
+                }}>+</button>
+            </div>
+            <div className='consultaCliente'>
+                {cliente.map((item, index) => (
+                    <p key={index}>{item.nome}</p>
+                ))}
             </div>
         </div>
     )

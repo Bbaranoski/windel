@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
+import './cliente.css'
 import Inicio from './inicio';
 import Cliente from './cliente';
 import { HiOutlineHome } from "react-icons/hi";

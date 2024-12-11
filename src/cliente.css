@@ -1,0 +1,19 @@
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    padding: clamp(15px, 3vh, 3vh);
+    gap: clamp(15px, 3vh, 3vh);
+}
+
+.cadastro > div:first-child > button{
+    background-color: #8BC34A;
+    border: 2px solid rgb(231, 222, 205);
+    border-radius: 20px;
+    padding: clamp(10px, 1vh, 1vh) clamp(25px, 3vh, 3vh);
+    min-height: 40px;
+}
+
+.consultaCliente{
+    border: 2px solid rgb(231, 222, 205);
+    border-radius: 10px;
+}
