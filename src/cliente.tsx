@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 import './cliente.css'
 
 //array que segura os dados dos clientes cadastrado
-type teste = {
+type clienteObj = {
     nome: string
 }
-const cliente: teste[] = []
+const cliente: clienteObj[] = []
 //passa a useState criada dentro de Cliente para outros componentes
 interface Props {
     setTela: React.Dispatch<React.SetStateAction<JSX.Element>>;
@@ -38,7 +38,7 @@ const Consulta: React.FC<Props> = ({ setTela }) => {
 }
 //paga o valor dos inputs e coloca dentro da array cliente
 const Cadastro: React.FC<Props> = ({ setTela }) => {
-    const [pessoa, setPessoa] = useState<teste | null>(null)
+    const [pessoa, setPessoa] = useState<clienteObj | null>(null)
     return(
         <div>
             <form action="get">

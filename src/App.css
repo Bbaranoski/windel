@@ -21,12 +21,11 @@ h1{
 
 #recolhe > div > button{
   font-size: 0px;
-  padding: 0px;
-  justify-content: center;
+  padding: 0px 0px 0px 15px;
 }
 
 #recolhe > .side > div > h1{
-  margin-left: 20px;
+  margin-left: 25px;
   transition: 2s;
 }
 
@@ -64,6 +63,12 @@ h1{
   justify-content: start;
   gap: 10px;
   transition: 0.5s;
+}
+
+.side > button > p{
+  margin: 0px;
+  transition: 1s;
+  transition-delay: 0.5;
 }
 
 .side > button:hover, .icon > *:hover, .recolhe:hover{

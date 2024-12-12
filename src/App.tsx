@@ -55,13 +55,13 @@ const App: React.FC = () => {
           onClick={() => {
             select(0)
             setTela(<Inicio />)
-        }}><HiOutlineHome size={20} color='black'/>Home</button>
+        }}><HiOutlineHome size={20} color='black'/><p>Home</p></button>
         <button 
           id={selectIndex === 1 ? 'select' : ''}
           onClick={() => {
             select(1)
             setTela(<Cliente />)
-        }}>< GoPerson size={20} color='black'/>Cliente</button>
+        }}>< GoPerson size={20} color='black'/><p>Cliente</p></button>
       </div>
       
       {/*conteudo principal da pagina, variavel do useState*/}
