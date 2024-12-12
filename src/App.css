@@ -6,20 +6,35 @@ h1{
   height: 100vh;
   display: grid;
   grid-template-rows: minmax(50px, 7vh) 1fr;
-  grid-template-columns: minmax(50px, 7vh) 1fr 5fr;
+  grid-template-columns: 1fr 7fr;
   gap: 2px;
+  transition: 2s;
 }
 
 .app > div{
   background-color: white;
-  transition: 1s;
+}
+
+#recolhe{
+  grid-template-columns: 0.4fr 10fr;
+}
+
+#recolhe > div > button{
+  font-size: 0px;
+  padding: 0px;
+  justify-content: center;
+}
+
+#recolhe > .side > div > h1{
+  margin-left: 20px;
+  transition: 2s;
 }
 
 .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-column: 3/4;
+  grid-column: span 1;
 }
 
 .header > div{
@@ -33,8 +48,10 @@ h1{
   flex-direction: column;
   gap: 5px;
   grid-row: 1/3;
-  grid-column: span 2;
+  grid-column: span 1;
   padding: 10px;
+  min-width: 50px;
+  overflow: hidden;
 }
 
 .side > button{
@@ -65,21 +82,4 @@ h1{
 
 img{
   height: clamp(30px, 5vh, 5vh);
-}
-
-#recolheSide{
-  grid-column: span 1;
-  padding: 0;
-}
-
-#recolheSide h1{
-  display: none;
-}
-
-#recolheSide button{
-  font-size: 0;
-}
-
-#recolheHeader, #recolheMain{
-  grid-column: span 2;
 }

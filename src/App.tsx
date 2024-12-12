@@ -25,9 +25,9 @@ const App: React.FC = () => {
   const [recolhe, setRecolhe] = useState<boolean>(false)
   
   return (
-    <div className='app'>
+    <div className='app' id={recolhe === false ? '' : 'recolhe'}>
 
-      <div className='header' id={recolhe === false ? '' : 'recolheHeader'}>
+      <div className='header'>
         <div>
           <IoIosArrowBack size={20} color='black' className='recolhe'
           onClick={() => {
@@ -45,8 +45,8 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div className='side' id={recolhe === false ? '' : 'recolheSide'}>
-        <div>
+      <div className='side'>
+        <div className='logo'>
         <img src={logo} alt="windel logo" />
           <h1>WINDEL</h1>
         </div>
@@ -65,9 +65,7 @@ const App: React.FC = () => {
       </div>
       
       {/*conteudo principal da pagina, variavel do useState*/}
-      <div id={recolhe === false ? '' : 'recolheMain'}>
        {tela}
-      </div>
 
     </div>
   )
