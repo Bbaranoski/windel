@@ -1,18 +1,27 @@
 h1{
   margin: 0px;
+  transition: 2s;
 }
 
-.app{
+.claro, .escuro{
   height: 100vh;
   display: grid;
   grid-template-rows: minmax(50px, 7vh) 1fr;
-  grid-template-columns: 1fr 7fr;
+  grid-template-columns: 1fr 5fr;
   gap: 2px;
   transition: 2s;
 }
 
-.app > div{
+.claro > div{
   background-color: white;
+}
+
+.escuro > div, .escuro > .side button{
+  background-color: black;
+}
+
+.escuro h1, .escuro p, .escuro label {
+  color: white;
 }
 
 #recolhe{
@@ -26,7 +35,7 @@ h1{
 
 #recolhe > .side > div > h1{
   margin-left: 25px;
-  transition: 2s;
+
 }
 
 .header{

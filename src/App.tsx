@@ -7,10 +7,10 @@ import { HiOutlineHome } from "react-icons/hi";
 import { FiBell } from "react-icons/fi";
 import { BsGear } from "react-icons/bs";
 import { FaRegStar } from "react-icons/fa";
-import { IoSunnyOutline } from "react-icons/io5";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import { TbBorderCorners } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import logo from "./image/logo.webp"
 
 const App: React.FC = () => {
@@ -23,25 +23,47 @@ const App: React.FC = () => {
   }
   //função para definir o tamanho da sidebar com id
   const [recolhe, setRecolhe] = useState<boolean>(false)
-  
+  //função para definir tema
+  const [tema, setTema] = useState<boolean>(false)
+  const cor: string = tema ? 'white' : 'black'
   return (
-    <div className='app' id={recolhe === false ? '' : 'recolhe'}>
+    <div className={tema === false ? 'claro' : 'escuro'} id={recolhe === false ? '' : 'recolhe'}>
 
       <div className='header'>
         <div>
-          <IoIosArrowBack size={20} color='black' className='recolhe'
+          {recolhe ? <IoIosArrowForward size={20} 
+          color={cor} 
+          className='recolhe'
           onClick={() => {
             setRecolhe(!recolhe)
           }}
-          />
+          /> : <IoIosArrowBack size={20} 
+          color={cor}  
+          className='recolhe'
+          onClick={() => {
+            setRecolhe(!recolhe)
+          }}
+          />}
           <h1>aaaaaaaaaa</h1>
         </div>
         <div className='icon'>
-          <IoSunnyOutline size={20} color='black'/>
-          <FaRegStar size={20} color='black'/>
-          <FiBell size={20} color='black'/> 
-          <BsGear size={20} color='black'/>
-          <TbBorderCorners size={20} color='black'/>
+          {tema ? <IoMoonOutline 
+          size={20} 
+          color='white'
+          onClick={() => {
+            setTema(!tema)
+          }}
+          /> : <IoSunnyOutline 
+          size={20} 
+          color='black'
+          onClick={() => {
+            setTema(!tema)
+          }}
+          />}
+          <FaRegStar size={20} color={cor} />
+          <FiBell size={20} color={cor} /> 
+          <BsGear size={20} color={cor} />
+          <TbBorderCorners size={20} color={cor} />
         </div>
       </div>
 
@@ -55,13 +77,13 @@ const App: React.FC = () => {
           onClick={() => {
             select(0)
             setTela(<Inicio />)
-        }}><HiOutlineHome size={20} color='black'/><p>Home</p></button>
+        }}><HiOutlineHome size={20} color={cor} /><p>Home</p></button>
         <button 
           id={selectIndex === 1 ? 'select' : ''}
           onClick={() => {
             select(1)
             setTela(<Cliente />)
-        }}>< GoPerson size={20} color='black'/><p>Cliente</p></button>
+        }}>< GoPerson size={20} color={cor} /><p>Cliente</p></button>
       </div>
       
       {/*conteudo principal da pagina, variavel do useState*/}
