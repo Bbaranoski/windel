@@ -1,6 +1,6 @@
 h1{
   margin: 0px;
-  transition: 2s;
+  transition: margin 2s;
 }
 
 .claro, .escuro{
@@ -71,13 +71,13 @@ h1{
   align-items: center;
   justify-content: start;
   gap: 10px;
-  transition: 0.5s;
+
 }
 
 .side > button > p{
   margin: 0px;
-  transition: 1s;
-  transition-delay: 0.5;
+  transition: font-size 1s;
+  transition-delay: 0.5s;
 }
 
 .side > button:hover, .icon > *:hover, .recolhe:hover{
