@@ -1,4 +1,4 @@
-.cadastro{
+.cadastro, .inputDiv{
     display: flex;
     flex-direction: column;
     padding: clamp(15px, 3vh, 3vh);
@@ -15,7 +15,7 @@
     min-height: 40px;
 }
 
-.consultaCliente{
+.consultaCliente, .form{
     padding: 10px;
     border: 2px solid rgb(240, 240, 240);
     border-radius: 10px;
@@ -29,5 +29,10 @@
     margin: 0px;
     padding: clamp(5px, 1vh, 1vh);
     background-color: skyblue;
+    border-radius: 10px;
+}
+
+input{
+    border: 2px solid rgb(240, 240, 240);
     border-radius: 10px;
 }

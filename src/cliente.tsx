@@ -40,25 +40,28 @@ const Consulta: React.FC<Props> = ({ setTela }) => {
 const Cadastro: React.FC<Props> = ({ setTela }) => {
     const [pessoa, setPessoa] = useState<clienteObj | null>(null)
     return(
-        <div>
-            <form action="get">
-                <label htmlFor="name">Nome:</label>
-                <input type="text"
-                required
-                name='name' 
-                id='name' 
-                onChange={(e) => {
-                    setPessoa({nome: e.target.value})
-                }}/>
-                <button type="submit" 
-                onClick={(e) => {
-                    e.preventDefault()
-                    if(pessoa != null){
-                        cliente.push(pessoa)
-                        setTela(<Consulta setTela={setTela}/>)
-                    }
-                }}>Cadastrar</button>
-            </form>
+        <div className='inputDiv'>
+            <div><h1>bruh</h1></div>
+            <div className='form'>
+                <form action="get">
+                    <label htmlFor="name">Nome:</label>
+                    <input type="text"
+                    required
+                    name='name' 
+                    id='name' 
+                    onChange={(e) => {
+                        setPessoa({nome: e.target.value})
+                    }}/>
+                    <button type="submit" 
+                    onClick={(e) => {
+                        e.preventDefault()
+                        if(pessoa != null){
+                            cliente.push(pessoa)
+                            setTela(<Consulta setTela={setTela}/>)
+                        }
+                    }}>Cadastrar</button>
+                </form>
+            </div>
         </div>
     )
 }
