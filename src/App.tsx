@@ -87,7 +87,7 @@ const App: React.FC = () => {
       </div>
       
       {/*conteudo principal da pagina, variavel do useState*/}
-       {tela}
+      {tela}
 
     </div>
   )
