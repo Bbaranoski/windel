@@ -1,10 +1,11 @@
 import React from 'react';
+import { Heading, Flex } from '@chakra-ui/react';
 
 const Inicio: React.FC = () => {
     return (
-        <div>
-            <h1>BUH</h1>
-        </div>
+        <Flex>
+            <Heading>BUH</Heading>
+        </Flex>
     )
 }
 

@@ -45,5 +45,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
+https://tailwindcss.com/docs/customizing-colors
 npx @chakra-ui/cli snippet add color-mode
